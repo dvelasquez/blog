@@ -1,14 +1,14 @@
 'use strict';
 
 module.exports = {
-  url: 'https://lumen.netlify.com',
+  url: 'https://d13z.dev',
   pathPrefix: '/',
-  title: 'Blog by John Doe',
-  subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+  title: 'Danilo Velasquez Blog',
+  subtitle: 'Software development, performance',
   copyright: '© All rights reserved.',
-  disqusShortname: '',
+  disqusShortname: 'd13z',
   postsPerPage: 4,
-  googleAnalyticsId: 'UA-73379983-2',
+  googleAnalyticsId: 'UA-160638961-1',
   useKatex: false,
   menu: [
     {
@@ -18,26 +18,22 @@ module.exports = {
     {
       label: 'About me',
       path: '/pages/about'
-    },
-    {
-      label: 'Contact me',
-      path: '/pages/contacts'
     }
   ],
   author: {
-    name: 'John Doe',
+    name: 'Danilo Velásquez',
     photo: '/photo.jpg',
-    bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    bio: 'My personal thoughts about software development and performance on the software as on the teams.',
     contacts: {
-      email: '',
-      facebook: '#',
-      telegram: '#',
-      twitter: '#',
-      github: '#',
+      email: 'danilo.velasquez@gmail.com',
+      facebook: '',
+      telegram: '',
+      twitter: 'https://twitter.com/D13Z_',
+      github: 'https://github.com/dvelasquez',
       rss: '',
       vkontakte: '',
-      linkedin: '#',
-      instagram: '#',
+      linkedin: 'https://www.linkedin.com/in/danilovelasquez/?locale=en_US',
+      instagram: 'https://www.instagram.com/_d13z_/',
       line: '',
       gitlab: '',
       weibo: '',
