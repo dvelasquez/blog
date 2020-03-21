@@ -3,7 +3,7 @@ title: When can I consider myself a good software developer
 date: "2020-03-18T22:40:32.169Z"
 template: "post"
 draft: false
-slug: "humane-typography-in-the-digital-age"
+slug: "When-can-I-consider-myself-a-good-software-developer"
 category: "Growth"
 tags:
   - insights
