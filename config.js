@@ -22,7 +22,7 @@ module.exports = {
   ],
   author: {
     name: 'Danilo Velásquez',
-    photo: '/photo.jpg',
+    photo: 'media/photo.jpg',
     bio: 'My personal thoughts about software development and performance on the software as on the teams.',
     contacts: {
       email: 'danilo.velasquez@gmail.com',
