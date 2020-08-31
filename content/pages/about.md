@@ -1,7 +1,7 @@
 ---
 title: "About me"
 template: "page"
-socialImage: "/media/image-2.jpg"
+socialImage: "media/photo.jpg"
 ---
 
 Hi, my name is **Danilo Velásquez Urrutia**, I’m a Chilean **software engineer** living in the sunny city of **Barcelona**.

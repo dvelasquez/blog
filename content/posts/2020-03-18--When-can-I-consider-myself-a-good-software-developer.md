@@ -11,7 +11,7 @@ tags:
   - dev
   - personal growth
 description: "A small essay about when you could consider yourself a good software developer."
-socialImage: "/media/dunning-krugger-effect.jpg"
+socialImage: "media/dunning-krugger-effect.png"
 ---
 This is based on a post published originally on [Quora in Spanish](https://es.quora.com/Cu%C3%A1ndo-puedes-considerarte-un-buen-programador) 
 
@@ -19,7 +19,7 @@ This is a very good (and often) question, and this reminds me of another questio
 
 This post walks through something called the **[Dunning-Krugger Effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)**, and this can be summarised with the following graph:
 
-![](/media/dunning-krugger-effect.png)
+![](media/dunning-krugger-effect.png)
 
 There is an interesting effect that happens to **junior developers**, who very often **thinks that they know everything about development**, but after a while, they start realising that there is **a lot more to learn**. This sometimes drove them to **feel overwhelmed** about **how little they know**. Some of them even **feel bad** because of this, and **their growth gets truncated**.
 

@@ -13,7 +13,7 @@ tags:
   - nodejs
   - server side render
 description: "Analysis, diagnostic and fix of a performance problem in a NextJS Application."
-socialImage: "/media/next.jslogo.png"
+socialImage: "media/next.jslogo.png"
 ---
 # TLDR
 - Keep your dependencies up to date
