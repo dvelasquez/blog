@@ -4,8 +4,8 @@ template: "page"
 socialImage: "media/photo.jpg"
 ---
 
-Hi, my name is **Danilo Velásquez Urrutia**, I’m a Chilean **software engineer**
-living in the sunny city of **Barcelona**.
+Hi, my name is **Danilo Velásquez Urrutia**, I’m a Chilean/Spanish **software
+engineer** living in the sunny city of **Barcelona**.
 
 I’ve been working as a **software engineer** since 2010. Over the years I’ve
 worked with technologies such as **J2EE, .NET, Javascript, Typescript** among
