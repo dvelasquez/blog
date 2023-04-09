@@ -4,7 +4,7 @@ import { Footer } from "./Footer.tsx";
 
 export interface LayoutProps {
   title: string;
-  description: string;
+  description?: string;
   tags?: string[];
 }
 

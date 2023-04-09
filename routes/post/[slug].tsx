@@ -14,7 +14,7 @@ export const handler: Handlers<Post> = {
 export default function PostPage(props: PageProps<Post>) {
   const post = props.data;
   return (
-    <Layout {...post}>
+    <Layout title={post.title} description={post.description} tags={post.tags}>
       <main dangerouslySetInnerHTML={{ __html: render(post.content) }}></main>
     </Layout>
   );
