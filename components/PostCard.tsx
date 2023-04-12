@@ -3,13 +3,12 @@ import { Post } from "../utils/posts.ts";
 function PostCard(props: { post: Post }) {
   const { post } = props;
   return (
-    <div>
+    <article class="card">
       <a href={`/post/${post.slug}`}>
-        <div>
-          {post.title}
-        </div>
+          <h2>{post.title}</h2>
       </a>
-    </div>
+      <p>{post.description}</p>
+    </article>
   );
 }
 

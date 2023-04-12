@@ -15,7 +15,8 @@ const Layout: FunctionComponent<LayoutProps> = (
     <>
       <Head>
         <title>{title}</title>
-        <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css" />
+        <link rel="stylesheet" href="/mvp.css" />
+        <link rel="stylesheet" href="/extra.css" />
       </Head>
       <header>
         <nav>
