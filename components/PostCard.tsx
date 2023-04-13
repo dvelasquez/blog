@@ -5,7 +5,7 @@ function PostCard(props: { post: Post }) {
   return (
     <article class="card">
       <a href={`/post/${post.slug}`}>
-          <h2>{post.title}</h2>
+        <h2>{post.title}</h2>
       </a>
       <p>{post.description}</p>
     </article>
