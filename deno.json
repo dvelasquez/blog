@@ -1,6 +1,9 @@
 {
   "tasks": {
-    "start": "deno run -A --watch=static/,routes/ dev.ts"
+    "start": "deno run -A --watch=static/,routes/ dev.ts",
+    "lint": "deno lint --ignore=static/ . --watch",
+    "fmt": "deno fmt --ignore=static/ . --watch",
+    "dev": "deno task start & deno task lint & deno task fmt"
   },
   "importMap": "./import_map.json",
   "compilerOptions": {

@@ -4,4 +4,3 @@ export function handler(req: Request): Response {
     headers: { Location: "/posts" },
   });
 }
-
