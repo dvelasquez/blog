@@ -1,6 +1,6 @@
 ---
 title: Debugging development performance in a NextJS application
-date: "2020-04-19T19:15:32.169Z"
+pubDate: "April 19, 2020"
 template: "post"
 draft: false
 slug: "debugging-development-performance-nextjs"
