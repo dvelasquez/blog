@@ -1,6 +1,6 @@
 ---
-title: When can I consider myself a good software developer
-pubDate: "March 18, 2020"
+title: When can I consider myself a good software developer?
+pubDate: 2020-03-18
 template: "post"
 draft: false
 slug: "When-can-I-consider-myself-a-good-software-developer"
@@ -11,32 +11,48 @@ tags:
   - dev
   - personal growth
 description: "A small essay about when you could consider yourself a good software developer."
-socialImage: "media/dunning-krugger-effect.png"
+heroImage: "/2020-03-18/hero-image.jpg"
+image:
+  url: "/2020-03-18/dunning-krugger-effect.png"
+  alt: "Dunning-Kruger Effect"
 ---
+
 This is based on a post published originally on [Quora in Spanish](https://es.quora.com/Cu%C3%A1ndo-puedes-considerarte-un-buen-programador) 
 
-This is a very good (and often) question, and this reminds me of another question from Quora:  [As an 18-year-old with 2 years of experience, can I get a job as a senior developer?](https://www.quora.com/As-an-18-year-old-with-2-years-of-experience-can-I-get-a-job-as-a-senior-developer) 
+This is a question I hear a lot, and it reminds me of another one I saw on Quora:  [As an 18-year-old with 2 years of experience, can I get a job as a senior developer?](https://www.quora.com/As-an-18-year-old-with-2-years-of-experience-can-I-get-a-job-as-a-senior-developer) 
 
-This post walks through something called the **[Dunning-Krugger Effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)**, and this can be summarised with the following graph:
+Both of these questions touch on something called the **[Dunning-Kruger Effect](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)**, which can be summed up in this graph:
 
-![](media/dunning-krugger-effect.png)
+![](/2020-03-18/dunning-krugger-effect.png)
 
-There is an interesting effect that happens to **junior developers**, who very often **thinks that they know everything about development**, but after a while, they start realising that there is **a lot more to learn**. This sometimes drove them to **feel overwhelmed** about **how little they know**. Some of them even **feel bad** because of this, and **their growth gets truncated**.
+It's funny how this works. Junior developers often think they know everything, but then they realize how much they *don't* know and start to feel overwhelmed.  Some even get discouraged and stop growing.
 
-If you feel like this, **you are not alone!** In fact, for some time **I felt like this myself!**
+If this sounds familiar, you're definitely not alone!  I've been there myself.
 
-For me, my learning experience in Software Development was something like this:
+Here's how my own learning journey went:
 
-*   First I learnt **Excel**, **how to use functions** like **IF** and **VLOOKUP** (at this point, **I wasn’t even thinking on pursue a career in software engineering**, I was only a **data entry guy**)
-*   Then, I learnt **Java**, (if, case, for, **OOP**)
-*   Then, I got **my first job**, **maintaining** and **developing** forms with **.NET** (in this gig I was the **only developer in the team**, with **zero experience** working professionally. I was even **versioning my code in Dropbox** because I didn’t know that **SVN** or **GIT** existed!)
-*   Then I learnt **libraries** and **frameworks** such as **Spring**, **Struts**, **myBatis** and the **MVC architecture** (at this point, I was in the **peak of the mount stupidity**, thinking “_Now I know everything about software development_”)
-*   Later, in a **job** **interview**, I was asked about **design patterns** such as **Factories**, **Facades**, **DRY**, **KISS** (and **I felt stupid and overwhelmed** since there was **much more to learn**).
-*   And then, **SOLID** (this is the part I realised that **I knew nothing about software development**, and out **there are people WAY better than me**). Here I was _in the lower part of the curve_.
-*   And because of this, I learnt that the **Architecture is more important than languages and frameworks** (and how pointless is engage in fanatic discussions about which language is better)
-*   Nowadays, I’m using **Clean Architecture** and **Hexagonal Architecture** whenever I can.
-*   And there is a _long way of learning_, **DDD**, **BDD**, **Event Sourcing** and so much more to know.
+*  **Early Days:** I started with Excel, learning basic functions like `IF` and `VLOOKUP`. (I wasn't even thinking about a career in software then—I was just a data entry clerk!)
+*  **Java and First Job:** I learned Java (if statements, loops, OOP), landed my first dev job maintaining and building forms with .NET.  (I was the only developer, totally green, and even versioned my code in Dropbox because I didn't know about SVN or Git!)  Looking back, I was probably at the peak of "Mount Stupidity" on that Dunning-Kruger graph!
+*  **Frameworks and the Valley of Despair:** I learned frameworks like Spring, Struts, and MyBatis, and the MVC architecture. Then, in a job interview, I got hit with questions about design patterns (Factories, Facades, DRY, KISS).  Suddenly, I felt like I knew nothing.  Welcome to the "Valley of Despair"!
+*  **SOLID and the Slope of Enlightenment:**  Learning about SOLID principles really drove home how much I still had to learn. But it also pushed me to start thinking more about architecture and less about specific languages.
+*  **Clean Architecture and Beyond:**  These days, I use Clean Architecture and Hexagonal Architecture whenever I can.  But I know there's still so much more to learn—DDD, BDD, Event Sourcing...the journey continues!
 
-A decisive point was, got over the fight of “**Java vs .NET vs PHP vs Python vs Javascript**” and understand that **languages are just a tool to achieve a goal, not the goal itself**. **Every language excels in something**, and some of them are **really good** in a **very specific domain** or context.
+A big turning point for me was getting over the "Java vs. .NET vs. [insert language here]" debate. I realized that languages are just tools. Each one has its strengths, and the best one depends on the job.
 
-So, personally, **I think you can consider yourself a good developer when you truly assimilate that languages don’t matter that much, but having a clear specification is more important**.
+So, when can you consider yourself a good developer? In my opinion, it's when you understand that languages are secondary. What really matters is having a clear specification. 
+
+**What makes a specification "clear"?** It means it's detailed, unambiguous, and accurately reflects the needs of the users and the business. It includes things like:
+
+* **Clear and concise user stories:**  What are users trying to achieve?
+* **Well-defined acceptance criteria:** How do we know when a feature is done?
+* **Detailed technical requirements:** What are the constraints and dependencies?
+
+A good specification is the foundation for building good software, regardless of the language you use.
+
+If you're feeling lost in the "valley of despair," here are a few things that helped me:
+
+* **Focus on fundamentals:**  Master the core principles of software development (data structures, algorithms, design patterns).
+* **Find a mentor:**  Learn from experienced developers who can guide you.
+* **Embrace continuous learning:**  Stay curious and keep exploring new technologies and approaches.
+
+The journey to becoming a good developer is ongoing. Embrace the challenges, keep learning, and you'll get there!

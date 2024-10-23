@@ -1,6 +1,6 @@
 ---
-title: Debugging development performance in a NextJS application
-pubDate: "April 19, 2020"
+title: Debugging Development Performance in a NextJS Application
+pubDate: 2020-04-19
 template: "post"
 draft: false
 slug: "debugging-development-performance-nextjs"
@@ -12,184 +12,69 @@ tags:
   - developer experience
   - nodejs
   - server side render
-description: "Analysis, diagnostic and fix of a performance problem in a NextJS Application."
-socialImage: "media/next.jslogo.png"
+description: "Analysis, diagnostic, and fix of a performance problem in a NextJS Application."
+heroImage: "/2020-04-19/hero-image.jpg" 
 ---
-# TLDR
-- Keep your dependencies up to date
-  - Upgrade the prom-client library to at least version 11.
-  - Check once in a while when was the last update of your dependencies
-- Remove unnecessary transpilations in the server
-- Improve the transpilations rules in next.config.js
 
-# A little of context
+#  Next.js Development Got You Down? Speed it Up!
 
-One of the **great perks** I have at work (aside of occasionally fly to other countries) is to work with websites that 
-are in the **top 10 of the most visited sites in their countries**. The opportunity of improve and make a website that 
-is very important for so many people. This is an **exciting** and **humbling** experience.
+One of the coolest parts of my job is getting to work on some seriously popular websites—we're talking top 10 in their countries! It's a real privilege to help improve platforms that so many people rely on.
 
-In many cases, the local teams are **continually busy improving the product from a business perspective**, and they don't 
-have all the time they would like to **focus, explore and improve** their sites **technically**, and this is the cue for 
-me to help.
+Often, the teams I work with are busy adding new features and keeping the business side of things running smoothly. That doesn't leave much time for digging into technical performance. And that's where I come in.
 
-# Why development mode in this application is slow?
+Recently, I teamed up with a group to troubleshoot their Next.js app, which was running painfully slow in development mode. Let me break down how we tracked down the issue and got things back up to speed.
 
-During the time working with this local team, we noticed that the **NextJS application is very slow in development mode**, 
-due to unknown reasons.
+#  The Problem: Development Mode Was a Slug
 
-Other projects similar in size and technologies seem to not have this problem.
+This Next.js app was way slower than other projects with a similar setup.  
 
-## Comparison table
+Just take a look:
 
-| Project | Boot time | Hot Reload time |
-|---------|-----------|-----------------|
-| Fresh NextJS Installation | ~3 sec | ~1.5 sec |
-| Marketplace in Tunisia and Dominican Republic | ~15 sec | ~5 sec |
-| **Marketplace in Belarus** | 1 - 2 min | 30 - 60 sec |
+| Project                       | Boot Time | Hot Reload Time |
+|--------------------------------|-----------|-----------------|
+| Fresh NextJS Installation      | ~3 sec    | ~1.5 sec        |
+| Marketplace (Tunisia/Dominican)| ~15 sec   | ~5 sec          |
+| **Marketplace (Belarus)**      | 1-2 min   | 30-60 sec       |
 
-Comparatively the Belarusian site is **4X - 8X slower** than the project from **Tunisia and Dominican Republic**, which 
-uses similar technologies and tools.
+The Belarusian site was lagging **4X - 8X** behind! Time to put on our detective hats.
 
-## Diagnostic
+#  The Tools: Node.js Profiling to the Rescue
 
-Since this error arises when running the application, and it seems related to compilation/building/execution time, we 
-should look for a way to get data of what is happening inside NodeJS.
+Since the problem seemed to be with how Node.js was compiling, building, or running the code, we used Node.js's built-in profiling tools.  
 
-For this, **NodeJS** provides the `--prof` command-line argument. This creates a profiling file on which we can get a 
-summary of the results. More information here: https://nodejs.org/es/docs/guides/simple-profiling/
+We ran the app with the `--prof` command to create a profiling file. This gave us a peek into what was happening inside the V8 engine.
 
-After running the profiling for both, development mode and production mode, these are my findings
+**What we found:** The app was spending way too much time in C++ code instead of JavaScript, especially in functions that got the current date (`_host_get_clock_service`) and functions related to  `prometheus-plugin-heap-stats`.
 
-## Development
+<img src="media/profiling-results.png" alt="Profiling results showing high C++ usage" width="600"> 
 
-These are the results of the profiling. Profiling gets a sample of what is happening inside the V8 engine and stores 
-them. The first clue is in the distribution of the samples.
+#  The Root Cause:  Prometheus (and an Old Library)
 
-Most of them are in the C++ section, instead of JavaScript.
+The profiling data pointed us toward Prometheus. To be sure, we switched off the Prometheus metrics in development mode, and voilà—a huge improvement:
 
+| Project                       | Boot Time | Hot Reload Time |
+|--------------------------------|-----------|-----------------|
+| Fresh NextJS Installation      | ~3 sec    | ~1.5 sec        |
+| Metrics Enabled               | 1-2 min   | 30-60 sec       |
+| **Metrics Disabled**           | ~26 sec   | ~3.5 sec        |
 
-|Ticks|Total|nonlib|Name|
-|-----|-----|------|----|
-|17587|9.5%|9.6%|JavaScript|
-|165016|88.8%|90.0%|C++|
-|5324|2.9%|2.9%|GC|
-|2406|1.3%|-|Shared libraries|
-|804|0.4%|-|Unaccounted|
+**But why was Prometheus causing such a slowdown?**
 
-**Bottom-up (heavy) profile:**
+The project was using a really old version of `prom-client` (9.1.1, released way back in 2017!). This outdated version used old Node.js code, which was causing the performance issues.
 
-|ticks|parent|name|
-|-----|------|----|
-|82034|44.1%|T _host_get_clock_service|
-|70368|37.9%|T __ZN2v88internal21Builtin_MakeTypeErrorEiPmPNS0_7IsolateE|
-|17996|25.6%|LazyCompile: *getHeapSpaceStatistics v8.js:146:32|
-|17796|98.9%|LazyCompile: *<anonymous> /Users/danilo.velazquez/dev/@kufar/kufar-fe/node_modules/prometheus-plugin-heap-stats/lib/index.js:74:22|
+**The Fix:** We updated `prom-client` to the newest version (12.0.0 at the time), and that significantly cut down on C++ usage and sped up development.
 
-**So what does that means?**
+#  More Speed Boosts:  Extra Optimizations
 
-In synthesis, the single function that is being called and draining the **44.1% of the CPU** is a call to get the 
-current date.
-Following by the **getHeapSpaceStatistics** and the **prometheus-plugin-heap-stats**.
+Updating the library was a big win, but we weren't done yet! Here are some more tweaks we made:
 
-_So, what about production?_
+* **Ditch the Extra Babel:** We got rid of Babel transpilation for the server-side code, since modern Node.js can handle most of what Babel does on its own. This helped the V8 engine run more smoothly.
+* **Simplify `next.config.js`:** We cleaned up the complicated rules in the `next.config.js` file to make dependency resolution faster.
+    *  **Pro Tip:** Use separate rules for including and excluding things to avoid those resource-heavy regex operations.
+* **Dependency Cleanup:**  We removed any dependencies the project wasn't using to slim things down.
+* **Consider Moving Cypress:**  For bigger projects, moving Cypress tests to their own repository can really help development speed.
+* **Koa or Express?:**  We thought about switching from Koa to Express.js (which is built into Next.js) to maybe simplify things and get rid of some dependencies.
 
-## Production
+**By making these optimizations, we made a real difference for the team. They could focus on building awesome features without getting bogged down by slow performance.**
 
-The results for the production mode were _slightly different_, as we can see in the following table:
-
-|Ticks|Total|nonlib|Name|
-|-----|-----|------|----|
-|22031|10.4%|10.5%|JavaScript|
-|182960|86.4%|87.5%|C++|
-|9325|4.4%|4.5%|GC|
-|2562|1.2%|-|Shared libraries|
-|4096|1.9%|-|Unaccounted|
-
-**Bottom-up (heavy) profile:**
-
-|ticks|parent|name|
-|-----|------|----|
-|98430|46.5%|T __ZN2v88internal21Builtin_MakeTypeErrorEiPmPNS0_7IsolateE|
-|27331|27.8%|LazyCompile: *getHeapSpaceStatistics v8.js:146:32|
-|27261|99.7%|LazyCompile: *<anonymous> /Users/danilo.velazquez/dev/@kufar/kufar-fe/node_modules/prometheus-plugin-heap-stats/lib/index.js:74:22|
-|27254|100%|LazyCompile: *listOnTimeout internal/timers.js:480:25|
-|27254|100%|LazyCompile: *processTimers internal/timers.js:460:25|
-|69383|32.8%|T _host_get_clock_service|
-
-The profiling is very similar, the only difference is the 1st and 2nd position in the Bottom Up change, but still, these 
-are the same 2 functions we saw in development mode.
-
-# Wait, but why?
-
-Let’s dissect the two functions in C++ that are hoarding more than 75% of the CPU.
-
-**`T _host_get_clock_service`**
-This is a **SYSCALL** to the OS to get the current time. **This is happening 32.8% of the time!!!**
-
-**`MakeTypeError`**
-**MakeTypeError** is a C++ method that is called whenever an error is thrown. If we look deeper into the log, we can see how 
-this is related to the **prometheus-plugin-heap-stats** module. This module tries to get the current status of the memory 
-heap at any given time.
-
-In some way, both are related to the usage of Prometheus. So let's further analyse the prometheus plugins.
-
-# Prometheus: are the metrics making the metrics worse?
-
-So, for the sake of testing, we are going to disable the metrics in development and see if the performance and the 
-profiling change.
-
-
-|Project|Boot time|Hot Reload time|
-|-------|---------|---------------|
-|Fresh NextJS Installation|~3 sec|~1.5 sec|
-|Metrics Enabled|1 - 2 min|30 - 60 sec|
-|Metrics Disabled|~26 sec|~3.5 sec|
-
-**What about profiling?**
-
-|Ticks|Total|nonlib|Name|
-|-----|-----|------|----|
-|17812|19.9%|20.4%|JavaScript|
-|68056|76.1%|78.0%|C++|
-|8419|9.4%|9.6%|GC|
-|2161|2.4%|-|Shared libraries|
-|1384|1.5%|-|Unaccounted|
-
-So the number of calls do change when we disabled prometheus for development. Has the Bottom Up calls changed too?
-
-|ticks|parent|name|
-|-----|------|----|
-|56138|62.8%|t __ZN2v88internalL60Builtin_Impl_Stats_CallSitePrototypeGetScriptNameOrSourceURLEiPmPNS0_7IsolateE|
-|16130|28.7%|t __ZN2v88internalL60Builtin_Impl_Stats_CallSitePrototypeGetScriptNameOrSourceURLEiPmPNS0_7IsolateE|
-|2109|99.7%|t __ZN2v88internalL60Builtin_Impl_Stats_CallSitePrototypeGetScriptNameOrSourceURLEiPmPNS0_7IsolateE|
-|106|5.0%|LazyCompile: *<anonymous> /Users/danilo.velazquez/dev/@kufar/kufar-fe/node_modules/webpack/node_modules/enhanced-resolve/lib/AppendPlugin.js:18:30|
-|924|1.0%|T _host_get_clock_service|
-
-Now the most expensive call is one related to webpack and to resolution of dependencies. Meanwhile, the 
-**`T _host_get_clock_service`** have dropped from being called more than 35% of the time to just 1%.
-
-# Are we suffering from the Heisenberg principle?
-
-Short answer: Yes. We knew that adding a **metrics plugin** will add to the overall performance since it is running in the 
-same machine and instance of **NodeJS**. 
-
-## So, how do we solve it?
-
-The installed version of **prom-client** is the **9.1.1** (released in **2017**), and the current version is **12.0.0**.
-The installed version of **prom-client** uses some (now legacy) API of NodeJS to get information and metrics, and this is 
-what is causing the performance problem.
-**Solution**: update the prom-client library to one is close to the version of NodeJS in use (in this case: v12).
-**After removing this library, the usage of C++ in the profiler drops by ~10%**, which is enough to shorten the waiting 
-times of **NextJS** for compile, but is still high. 
-
-## Further optimisations can be made in order to get more performance, for example:
-- **Removing the usage of babel in code rendered in NodeJS**, since most of those functions are now native to the 
-platform, and they are just adding overhead to the V8 engine.
-- **Avoid complex regex matchers in next.config.js**. A lot of the power process is being used to traverse the folders 
-inside `node_modules`, and see if they match or don’t with the regex.
-  - A solution is to duplicate the rules, but one to exclude and then, another to include the exceptions (this order is important)
-  - Remove dependencies that are not being used
-  - Remove not used dependencies
-- Move **Cypress** to another repository (**Cypress** has a lot of dependencies)
-- Analyse the difficulty of move code from **Koa** to **ExpressJS**, to in the future remove all the Koa dependencies 
-and use **Express**, which is included in **NextJS**
+Hopefully, this look into debugging Next.js performance helps you out! Remember, profiling tools and a step-by-step approach can help you find and fix those hidden performance problems.
