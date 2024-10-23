@@ -1,0 +1,54 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Hey there, I'm Danilo</h1>
+      <p>
+        I'm a Staff Software Engineer and Platform Engineer with a passion for building fast, reliable, and
+        user-friendly web applications. From optimizing frontend performance to architecting scalable cloud platforms,
+        I've had the opportunity to work on some of the most challenging and rewarding projects in the industry. On this
+        blog, I'll share my experiences, insights, and lessons learned, covering topics like:
+      </p>
+
+      <ul>
+        <li>
+          <b>Frontend performance optimization:</b> Techniques for building blazing-fast web experiences that delight users.
+          I'll dive into code splitting, image optimization, caching strategies, and more to help you squeeze every ounce
+          of performance from your frontend applications.
+        </li>
+        <li>
+          <b>Cloud-native platform engineering:</b> Architecting scalable and resilient systems in the cloud using technologies
+          like Kubernetes, Docker, and serverless functions. I'll share best practices for designing, deploying, and managing
+          cloud infrastructure for optimal performance and cost-efficiency.
+        </li>
+        <li>
+          <b>DevOps and CI/CD:</b> Building and deploying software with speed and efficiency. I'll explore topics like continuous
+          integration, continuous delivery, automated testing, and infrastructure as code to help you streamline your development
+          workflows and accelerate your release cycles.
+        </li>
+        <li>
+          <b>Leadership and team dynamics:</b> Creating high-performing engineering teams that thrive on collaboration and
+          innovation. I'll share insights on mentoring, delegation, communication, and fostering a culture of continuous
+          learning and improvement.
+        </li>
+      </ul>
+
+      <p>
+        Whether you're a junior developer looking to level up your skills or a seasoned engineer seeking new
+        perspectives, I hope you'll find valuable insights and practical advice on this blog.
+      </p>
+    </main>
+    <Footer />
+  </body>
+</html>
