@@ -14,10 +14,14 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Get Node version from package.json volta.node
+      id: get-node-version
+      run: echo "::set-output name=node_version::$(jq -r '.volta.node' package.json)"
+
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20'
+        node-version: ${{ steps.get-node-version.outputs.node_version }}
         cache: 'npm'
 
     - name: Install dependencies
