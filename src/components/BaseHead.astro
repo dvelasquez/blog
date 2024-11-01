@@ -24,7 +24,7 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
 <link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
 <link rel="preload" href="/fonts/opendyslexic-regular.woff" as="font" type="font/woff" crossorigin />
-<link rel="preload" href="/fonts/opendyslexic-bold" as="font" type="font/woff" crossorigin />
+<link rel="preload" href="/fonts/opendyslexic-bold.woff" as="font" type="font/woff" crossorigin />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -53,22 +53,4 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const toggleButton = document.getElementById('toggle-font');
-    const isDyslexiaFont = localStorage.getItem('dyslexiaFont') === 'true';
-
-    if (isDyslexiaFont) {
-      document.body.classList.add('dyslexia-font');
-    }
-
-    toggleButton?.addEventListener('click', function () {
-      document.body.classList.toggle('dyslexia-font');
-      if (isDyslexiaFont) {
-        localStorage.setItem('dyslexiaFont', 'false');
-      } else {
-        localStorage.setItem('dyslexiaFont', 'true');
-      }
-    });
-  });
-</script>
+<script src="../utils/dyslexia.ts"></script>
