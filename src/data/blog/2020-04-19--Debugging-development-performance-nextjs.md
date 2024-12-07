@@ -46,7 +46,6 @@ We ran the app with the `--prof` command to create a profiling file. This gave u
 
 **What we found:** The app was spending way too much time in C++ code instead of JavaScript, especially in functions that got the current date (`_host_get_clock_service`) and functions related to  `prometheus-plugin-heap-stats`.
 
-<img src="media/profiling-results.png" alt="Profiling results showing high C++ usage" width="600"> 
 
 #  The Root Cause:  Prometheus (and an Old Library)
 
