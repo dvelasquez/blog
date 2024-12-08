@@ -1,11 +1,9 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
+import { defineConfig } from "astro/config";
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+import tailwind from "@astrojs/tailwind";
 
-import sitemap from '@astrojs/sitemap';
-
-// https://astro.build/config
 export default defineConfig({
-	site: 'https://d13z.dev',
-	integrations: [mdx(), sitemap()],
+  site: "https://astro-nano-demo.vercel.app",
+  integrations: [mdx(), sitemap(), tailwind()],
 });
