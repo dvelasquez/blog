@@ -6,7 +6,7 @@ demoURL: "https://dvelasquez.github.io/lighthouse-viewer/index.html"
 repoURL: "https://github.com/dvelasquez/lighthouse-viewer" 
 ---
 
-![Lighthouse Viewer](/lighthouse-viewer.png)
+![Lighthouse Viewer](/projects/lighthouse-viewer.png)
 
 Lighthouse Viewer is a developer tool that simplifies the process of viewing and analyzing Lighthouse performance reports directly within your web projects. It's available as a wrapper component for popular JavaScript frameworks like VueJS (v2 and v3), React, and Svelte, and also works with vanilla JavaScript. This means you can seamlessly integrate Lighthouse reports into your development workflow, regardless of your preferred framework.
 

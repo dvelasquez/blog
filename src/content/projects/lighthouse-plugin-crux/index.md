@@ -6,7 +6,7 @@ demoURL: "https://googlechrome.github.io/lighthouse/viewer/?gist=cb20232dcc7a8b4
 repoURL: "https://github.com/dvelazquez/lighthouse-plugin-crux" 
 ---
 
-![lighthouse-plugin-crux](/lighthouse-plugin-crux.jpg)
+![lighthouse-plugin-crux](/projects/lighthouse-plugin-crux.jpg)
 
 `lighthouse-plugin-crux` is a custom Lighthouse plugin that enhances your performance audits by incorporating real-world field data from the Chrome UX Report (CrUX) and Core Web Vitals. This plugin provides a more comprehensive view of your website's performance by combining lab data (from Lighthouse) with field data (from real users).
 
