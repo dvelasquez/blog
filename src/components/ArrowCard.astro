@@ -5,7 +5,7 @@ type Props = {
   entry: CollectionEntry<"blog"> | CollectionEntry<"projects">;
 }
 
-const { entry } = Astro.props;
+const { entry }: Props = Astro.props;
 ---
 
 <a href={`/${entry.collection}/${entry.id}`} class="relative group flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
