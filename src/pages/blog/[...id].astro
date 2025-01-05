@@ -5,6 +5,7 @@ import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import { readingTime } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
+import LetsConnect from "@components/LetsConnect.astro";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog"))
@@ -45,5 +46,6 @@ const { Content } = await render(post);
     <article class="animate">
       <Content />
     </article>
+    <LetsConnect />
   </Container>
 </PageLayout>
