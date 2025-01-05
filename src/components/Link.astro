@@ -7,7 +7,7 @@ type Props = {
   underline?: boolean;
 }
 
-const { href, external, underline = true, ...rest } = Astro.props;
+const { href, external, underline = true, ...rest }: Props = Astro.props;
 ---
 
 <a 
