@@ -53,4 +53,4 @@ We also decided to consolidate our testing onto a single, more powerful virtual 
 
 With the testing bottleneck resolved, the build process became the slowest part of our CI pipeline.  Reducing the build time from 15 minutes proved to be a much harder challenge.
 
-(To be continued...)
+([To be continued...](/blog/05-taming-the-ci-beast-part-3))
