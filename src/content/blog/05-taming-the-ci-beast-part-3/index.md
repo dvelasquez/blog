@@ -110,3 +110,5 @@ By streamlining the build process and optimizing our Docker images, we further t
 With these optimizations in place, our CI pipeline now completes in **just 9 minutes**, a significant improvement from the initial **50-minute (or longer!)** build times. This faster feedback loop has greatly improved developer productivity and allowed us to deliver value to our users more quickly.
 
 And with that, our journey of taming the CI beast comes to an end.  We transformed a lumbering, time-consuming process into a leaner, meaner, code-deploying machine.  Our developers rejoiced, our users benefited, and the CI monster, once a fearsome foe, became a loyal companion, helping us deliver value faster and more efficiently.
+
+Bonus [Part 4: Quantifying the cost savings and developer productivity gains achieved by optimizing our CI/CD pipeline.](/blog/06-taming-the-ci-beast-part-4)
