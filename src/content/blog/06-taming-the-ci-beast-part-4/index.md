@@ -37,10 +37,6 @@ By reducing the CI/CD process time to nine minutes, we decreased the annual time
 
 This translates to an annual cost savings of €238,680 and a significant reduction in wasted developer time.
 
-By reducing the CI/CD process time to nine minutes, we decreased the annual time spent to 1404 hours/year, resulting in a new annual cost of €39,312.
-
-This translates to an annual cost savings of **€222,768** and a significant reduction in wasted developer time.
-
 ![The cost of losing developer flow (from monkeyuser.com)](/2025-01-20/developer-flow.jpg)
 
 ## Beyond the Numbers: The Impact on Developer Flow
