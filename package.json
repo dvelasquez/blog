@@ -21,7 +21,7 @@
     "@fontsource/lora": "^5.2.5",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "4.0.17",
-    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.0",
     "@typescript-eslint/parser": "^8.26.1",
     "astro": "5.7.4",
     "clsx": "^2.1.1",
