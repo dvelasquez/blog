@@ -35,7 +35,7 @@
   },
   "volta": {
     "node": "22.16.0",
-    "npm": "11.4.1"
+    "npm": "11.4.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "3.3.1",
