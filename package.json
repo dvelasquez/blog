@@ -20,7 +20,7 @@
     "@fontsource/inter": "5.2.6",
     "@fontsource/lora": "5.2.6",
     "@tailwindcss/typography": "0.5.16",
-    "@tailwindcss/vite": "4.1.11",
+    "@tailwindcss/vite": "4.1.12",
     "@typescript-eslint/eslint-plugin": "8.39.1",
     "@typescript-eslint/parser": "8.39.1",
     "astro": "5.13.0",
@@ -30,7 +30,7 @@
     "eslint-plugin-jsx-a11y": "6.10.2",
     "sharp": "0.34.3",
     "tailwind-merge": "3.3.1",
-    "tailwindcss": "4.1.11",
+    "tailwindcss": "4.1.12",
     "typescript": "5.9.2"
   },
   "volta": {
