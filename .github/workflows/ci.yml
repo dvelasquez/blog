@@ -19,7 +19,7 @@ jobs:
       run: echo "::set-output name=node_version::$(jq -r '.volta.node' package.json)"
 
     - name: Setup Node.js
-      uses: actions/setup-node@v5
+      uses: actions/setup-node@v6
       with:
         node-version: ${{ steps.get-node-version.outputs.node_version || 22 }}
         cache: 'npm'
