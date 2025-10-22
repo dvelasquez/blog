@@ -1,10 +1,14 @@
 ---
 import Container from "@components/Container.astro";
 import { ABOUT } from "@consts";
-import PageLayout from "@layouts/PageLayout.astro"; 
+import PageLayout from "@layouts/PageLayout.astro";
+import { createPersonSchema } from "@lib/schemas";
+
+const personSchema = createPersonSchema(Astro.site!);
 ---
 
 <PageLayout title={ABOUT.TITLE} description={ABOUT.DESCRIPTION}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
   <Container>
     <h4 class="animate font-semibold text-black dark:text-white">
       Hey there, I'm Danilo <span class="text-xl">👋🏻</span>
