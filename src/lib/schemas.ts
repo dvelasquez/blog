@@ -39,7 +39,7 @@ export function createBlogPostingSchema(
     "author": {
       "@type": "Person",
       "name": SITE.NAME,
-      "url": `${baseUrl}about`
+      "url": new URL("about", baseUrl).toString()
     },
     "publisher": {
       "@type": "Person",
