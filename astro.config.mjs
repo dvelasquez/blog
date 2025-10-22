@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://astro-nano-demo.vercel.app",
+  site: "https://d13z.dev",
   integrations: [mdx(), sitemap()],
 
   vite: {

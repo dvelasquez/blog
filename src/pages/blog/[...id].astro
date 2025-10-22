@@ -6,6 +6,7 @@ import FormattedDate from "@components/FormattedDate.astro";
 import { readingTime } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
 import LetsConnect from "@components/LetsConnect.astro";
+import { createBlogPostingSchema } from "@lib/schemas";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog"))
@@ -20,9 +21,18 @@ type Props = CollectionEntry<"blog">;
 
 const post: Props = Astro.props;
 const { Content } = await render(post);
+
+const articleSchema = createBlogPostingSchema(
+  post.data.title,
+  post.data.description,
+  post.data.date,
+  Astro.url,
+  Astro.site!
+);
 ---
 
 <PageLayout title={post.data.title} description={post.data.description}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <Container>
     <div class="animate">
       <BackToPrev href="/blog">
