@@ -1,5 +1,6 @@
-import type { Person, BlogPosting, WithContext } from "schema-dts";
+import type { Person, BlogPosting, FAQPage, WithContext } from "schema-dts";
 import { SITE, SOCIALS } from "@consts";
+import type { FAQItem } from "@data/faq";
 
 export function createPersonSchema(baseUrl: URL): WithContext<Person> {
   const aboutUrl = new URL("about", baseUrl).toString();
@@ -91,3 +92,17 @@ export function createBlogPostingSchema(
   };
 }
 
+export function createFAQPageSchema(faqItems: FAQItem[]): WithContext<FAQPage> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
+}

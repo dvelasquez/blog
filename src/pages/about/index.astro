@@ -1,14 +1,18 @@
 ---
 import Container from "@components/Container.astro";
+import FAQ from "@components/FAQ.astro";
 import { ABOUT } from "@consts";
 import PageLayout from "@layouts/PageLayout.astro";
-import { createPersonSchema } from "@lib/schemas";
+import { createPersonSchema, createFAQPageSchema } from "@lib/schemas";
+import { faqData } from "@data/faq";
 
 const personSchema = createPersonSchema(Astro.site!);
+const faqSchema = createFAQPageSchema(faqData);
 ---
 
 <PageLayout title={ABOUT.TITLE} description={ABOUT.DESCRIPTION}>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <Container>
     <h4 class="animate font-semibold text-black dark:text-white">
       Hey there, I'm Danilo <span class="text-xl">👋🏻</span>
@@ -63,6 +67,8 @@ const personSchema = createPersonSchema(Astro.site!);
           <p class="animate">Join me as I share my insights and experiences on building better software.</p>
         </article>
       </section>
+
+      <FAQ items={faqData} />
     </div>
   </Container>
 </PageLayout>
