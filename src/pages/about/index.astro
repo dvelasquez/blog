@@ -1,18 +1,27 @@
 ---
 import Container from "@components/Container.astro";
 import FAQ from "@components/FAQ.astro";
+import Link from "@components/Link.astro";
 import { ABOUT } from "@consts";
 import PageLayout from "@layouts/PageLayout.astro";
 import { createPersonSchema, createFAQPageSchema } from "@lib/schemas";
 import { faqData } from "@data/faq";
 
 const personSchema = createPersonSchema(Astro.site!);
-const faqSchema = createFAQPageSchema(faqData);
+
+// Filter top 3 most important questions
+const topFaqItems = [
+  faqData[0], // Professional summary
+  faqData[7], // Core philosophy
+  faqData[1]  // Staff Engineer impact
+];
+
+const filteredFaqSchema = createFAQPageSchema(topFaqItems);
 ---
 
 <PageLayout title={ABOUT.TITLE} description={ABOUT.DESCRIPTION}>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(filteredFaqSchema)} />
   <Container>
     <h4 class="animate font-semibold text-black dark:text-white">
       Hey there, I'm Danilo <span class="text-xl">👋🏻</span>
@@ -68,7 +77,17 @@ const faqSchema = createFAQPageSchema(faqData);
         </article>
       </section>
 
-      <FAQ items={faqData} />
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+          <h5 class="font-semibold text-black dark:text-white">
+            Frequently Asked Questions
+          </h5>
+          <Link href="/faq">
+            See all frequently asked questions
+          </Link>
+        </div>
+        <FAQ items={topFaqItems} />
+      </section>
     </div>
   </Container>
 </PageLayout>
