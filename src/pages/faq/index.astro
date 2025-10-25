@@ -1,0 +1,22 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import FAQ from "@components/FAQ.astro";
+import { faqData } from "@data/faq";
+import { createFAQPageSchema } from "@lib/schemas";
+
+const faqSchema = createFAQPageSchema(faqData);
+---
+
+<PageLayout title="FAQ" description="Frequently asked questions about my experience as a Staff Software Engineer, my approach to development, and my professional philosophy.">
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  
+  <Container>
+    <h1 class="animate font-semibold text-black dark:text-white text-xl">
+      Frequently Asked Questions
+    </h1>
+    <div class="space-y-16">
+      <FAQ items={faqData} />
+    </div>
+  </Container>
+</PageLayout>
