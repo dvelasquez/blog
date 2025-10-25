@@ -33,6 +33,11 @@ export const ABOUT: Metadata = {
   DESCRIPTION: "A little bit about me.",
 };
 
+export const CONSULTING: Metadata = {
+  TITLE: "Consulting",
+  DESCRIPTION: "Staff-level engineering consulting and mentoring services for platform engineering, DevEx, and architecture.",
+};
+
 export const SOCIALS: Socials = [
   { 
     NAME: "github",

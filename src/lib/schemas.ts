@@ -1,4 +1,4 @@
-import type { Person, BlogPosting, FAQPage, WithContext } from "schema-dts";
+import type { Person, BlogPosting, FAQPage, Service, WithContext } from "schema-dts";
 import { SITE, SOCIALS } from "@consts";
 import type { FAQItem } from "@data/faq";
 
@@ -104,5 +104,44 @@ export function createFAQPageSchema(faqItems: FAQItem[]): WithContext<FAQPage> {
         "text": item.answer
       }
     }))
+  };
+}
+
+export function createConsultingServiceSchema(baseUrl: URL): WithContext<Service> {
+  const consultingUrl = new URL("consulting", baseUrl).toString();
+  const authorId = new URL("about", baseUrl).toString();
+  
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": consultingUrl,
+    "name": "Staff-Level Engineering Consulting & Mentoring",
+    "description": "Staff-level engineering consulting and mentoring services for platform engineering, DevEx, and architecture. Helping engineering organizations scale their platforms, people, and processes.",
+    "provider": {
+      "@id": authorId
+    },
+    "serviceType": "Engineering Consulting",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Worldwide"
+    },
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceUrl": consultingUrl
+    },
+    "offers": {
+      "@type": "Offer",
+      "description": "Free 30-minute discovery call to assess fit",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "category": [
+      "Platform Engineering",
+      "Developer Experience",
+      "Systems Architecture",
+      "CI/CD Optimization",
+      "Technical Leadership",
+      "Engineering Mentoring"
+    ]
   };
 }
