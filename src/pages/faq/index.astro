@@ -12,9 +12,9 @@ const faqSchema = createFAQPageSchema(faqData);
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   
   <Container>
-    <h4 class="animate font-semibold text-black dark:text-white">
+    <h1 class="animate font-semibold text-black dark:text-white text-xl">
       Frequently Asked Questions
-    </h4>
+    </h1>
     <div class="space-y-16">
       <FAQ items={faqData} />
     </div>
