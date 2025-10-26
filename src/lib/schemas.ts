@@ -7,10 +7,10 @@ import type {
 } from "schema-dts";
 import { SITE, SOCIALS } from "@consts";
 import type { FAQItem } from "@data/faq";
-import { stripHtml } from "@lib/utils";
 
 export function createPersonSchema(baseUrl: URL): WithContext<Person> {
   const aboutUrl = new URL("about", baseUrl).toString();
+  const consultingUrl = new URL("consulting", baseUrl).toString();
 
   return {
     "@context": "https://schema.org",
@@ -34,18 +34,40 @@ export function createPersonSchema(baseUrl: URL): WithContext<Person> {
     worksFor: [
       {
         "@type": "Organization",
+        name: "Kleinanzeigen",
+        url: "https://www.kleinanzeigen.de",
+      },
+    ],
+    alumniOf: [
+      {
+        "@type": "Organization",
         name: "Leboncoin",
         url: "https://www.leboncoin.fr",
       },
       {
         "@type": "Organization",
-        name: "Kleinanzeigen",
-        url: "https://www.kleinanzeigen.de",
+        name: "Adevinta",
+        url: "https://www.adevinta.com",
       },
       {
         "@type": "Organization",
-        name: "Adevinta",
-        url: "https://www.adevinta.com",
+        name: "Yapo",
+        url: "https://www.yapo.cl",
+      },
+      {
+        "@type": "Organization",
+        name: "Subito",
+        url: "https://www.subito.it",
+      },
+      {
+        "@type": "Organization",
+        name: "Jofogas",
+        url: "https://www.jofogas.hu",
+      },
+      {
+        "@type": "Organization",
+        name: "Willhaben",
+        url: "https://www.willhaben.at",
       },
     ],
     knowsLanguage: [
@@ -68,7 +90,17 @@ export function createPersonSchema(baseUrl: URL): WithContext<Person> {
       "NextJS",
       "Astro",
       "TypeScript",
+      "Platform Engineering",
+      "Developer Experience",
+      "Systems Architecture",
+      "CI/CD Optimization",
+      "Monorepo Architecture",
+      "Legacy System Migration",
+      "Node.js",
     ],
+    makesOffer: {
+      "@id": consultingUrl,
+    },
   };
 }
 
@@ -109,7 +141,7 @@ export function createFAQPageSchema(faqItems: FAQItem[]): WithContext<FAQPage> {
       name: item.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: stripHtml(item.answer),
+        text: item.answer,
       },
     })),
   };
