@@ -1,6 +1,7 @@
 import type { Person, BlogPosting, FAQPage, Service, WithContext } from "schema-dts";
 import { SITE, SOCIALS } from "@consts";
 import type { FAQItem } from "@data/faq";
+import { stripHtml } from "@lib/utils";
 
 export function createPersonSchema(baseUrl: URL): WithContext<Person> {
   const aboutUrl = new URL("about", baseUrl).toString();
@@ -101,7 +102,7 @@ export function createFAQPageSchema(faqItems: FAQItem[]): WithContext<FAQPage> {
       "name": item.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": item.answer
+        "text": stripHtml(item.answer)
       }
     }))
   };
