@@ -25,7 +25,8 @@ export const WORK: Metadata = {
 
 export const PROJECTS: Metadata = {
   TITLE: "Projects",
-  DESCRIPTION: "A collection of my projects, with links to repositories and demos.",
+  DESCRIPTION:
+    "A collection of my projects, with links to repositories and demos.",
 };
 
 export const ABOUT: Metadata = {
@@ -35,20 +36,21 @@ export const ABOUT: Metadata = {
 
 export const CONSULTING: Metadata = {
   TITLE: "Consulting",
-  DESCRIPTION: "Staff-level engineering consulting and mentoring services for platform engineering, DevEx, and architecture.",
+  DESCRIPTION:
+    "Staff-level engineering consulting and mentoring services for platform engineering, DevEx, and architecture.",
 };
 
 export const SOCIALS: Socials = [
-  { 
+  {
     NAME: "github",
-    HREF: "https://github.com/dvelasquez"
+    HREF: "https://github.com/dvelasquez",
   },
-  { 
+  {
     NAME: "linkedin",
     HREF: "https://www.linkedin.com/in/danilovelasquez/",
   },
   {
     NAME: "bluesky",
-    HREF: "https://bsky.app/profile/d13z.bsky.social"
-  }
+    HREF: "https://bsky.app/profile/d13z.bsky.social",
+  },
 ];

@@ -1,0 +1,16 @@
+# Dependencies
+node_modules
+dist
+.next
+.astro
+
+# Generated
+public/fonts
+
+# Build outputs
+build
+.cache
+
+# Misc
+package-lock.json
+

@@ -18,9 +18,9 @@ const projects = (await getCollection("projects"))
       </div>
       <ul class="animate flex flex-col gap-4">
         {
-          projects.map((project) => (
+          projects.map(project => (
             <li>
-              <ArrowCard entry={project}/>
+              <ArrowCard entry={project} />
             </li>
           ))
         }

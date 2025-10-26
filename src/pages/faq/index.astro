@@ -8,11 +8,18 @@ import { createFAQPageSchema } from "@lib/schemas";
 const faqSchema = createFAQPageSchema(faqData);
 ---
 
-<PageLayout title="FAQ" description="Frequently asked questions about my experience as a Staff Software Engineer, my approach to development, and my professional philosophy.">
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-  
+<PageLayout
+  title="FAQ"
+  description="Frequently asked questions about my experience as a Staff Software Engineer, my approach to development, and my professional philosophy."
+>
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(faqSchema)}
+  />
+
   <Container>
-    <h1 class="animate font-semibold text-black dark:text-white text-xl">
+    <h1 class="animate text-xl font-semibold text-black dark:text-white">
       Frequently Asked Questions
     </h1>
     <div class="space-y-16">

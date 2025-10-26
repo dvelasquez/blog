@@ -9,26 +9,28 @@ const { items } = Astro.props;
 ---
 
 <section class="space-y-4">
-  
   <div class="space-y-3">
-    {items.map((item) => (
-      <details class="animate group rounded-sm border border-black/15 dark:border-white/20 overflow-hidden">
-        <summary class="cursor-pointer px-4 py-3 font-semibold text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-300 ease-in-out list-none flex items-center justify-between">
-          <span>{item.question}</span>
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            viewBox="0 0 24 24" 
-            class="size-5 stroke-2 fill-none stroke-current transition-transform duration-300 group-open:rotate-180"
-          >
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </summary>
-        <div class="px-4 py-3 border-t border-black/10 dark:border-white/15 bg-black/2 dark:bg-white/2">
-          <div class="text-black/75 dark:text-white/75 prose dark:prose-invert prose-sm max-w-none" set:html={item.answer}>
+    {
+      items.map(item => (
+        <details class="animate group overflow-hidden rounded-sm border border-black/15 dark:border-white/20">
+          <summary class="flex cursor-pointer list-none items-center justify-between px-4 py-3 font-semibold text-black transition-colors duration-300 ease-in-out hover:bg-black/5 dark:text-white dark:hover:bg-white/5">
+            <span>{item.question}</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="size-5 fill-none stroke-current stroke-2 transition-transform duration-300 group-open:rotate-180"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </summary>
+          <div class="border-t border-black/10 bg-black/2 px-4 py-3 dark:border-white/15 dark:bg-white/2">
+            <div
+              class="prose dark:prose-invert prose-sm max-w-none text-black/75 dark:text-white/75"
+              set:html={item.answer}
+            />
           </div>
-        </div>
-      </details>
-    ))}
+        </details>
+      ))
+    }
   </div>
 </section>
-
