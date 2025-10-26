@@ -41,17 +41,17 @@ export function dateRange(startDate: Date, endDate?: Date | string): string {
 
 export function stripHtml(html: string): string {
   return html
-    .replace(/<[^>]+>/g, '')           // Remove all HTML tags
-    .replace(/&nbsp;/g, ' ')           // Replace non-breaking spaces
-    .replace(/&amp;/g, '&')            // Replace ampersands
-    .replace(/&lt;/g, '<')             // Replace less-than
-    .replace(/&gt;/g, '>')             // Replace greater-than
-    .replace(/&quot;/g, '"')           // Replace quotes
+    .replace(/<[^>]+>/g, "")           // Remove all HTML tags
+    .replace(/&nbsp;/g, " ")           // Replace non-breaking spaces
+    .replace(/&amp;/g, "&")            // Replace ampersands
+    .replace(/&lt;/g, "<")             // Replace less-than
+    .replace(/&gt;/g, ">")             // Replace greater-than
+    .replace(/&quot;/g, "\"")           // Replace quotes
     .replace(/&#39;/g, "'")            // Replace apostrophes
-    .replace(/[\u201C\u201D]/g, '"')   // Replace curly double quotes
+    .replace(/[\u201C\u201D]/g, "\"")   // Replace curly double quotes
     .replace(/[\u2018\u2019]/g, "'")   // Replace curly single quotes
-    .replace(/[\u2014]/g, '--')        // Replace em dashes
-    .replace(/[\u2013]/g, '-')         // Replace en dashes
-    .replace(/\s+/g, ' ')              // Normalize whitespace
+    .replace(/[\u2014]/g, "--")        // Replace em dashes
+    .replace(/[\u2013]/g, "-")         // Replace en dashes
+    .replace(/\s+/g, " ")              // Normalize whitespace
     .trim();
 }
