@@ -55,3 +55,9 @@ export function stripHtml(html: string): string {
     .replace(/\s+/g, " ") // Normalize whitespace
     .trim();
 }
+
+export function extractFirstImageFromMarkdown(content: string): string | null {
+  const imageRegex = /!\[.*?\]\((.*?)\)/;
+  const match = content.match(imageRegex);
+  return match ? match[1] : null;
+}

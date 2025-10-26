@@ -10,7 +10,8 @@ export const SITE: Site = {
 
 export const HOME: Metadata = {
   TITLE: "Home",
-  DESCRIPTION: "Astro Nano is a minimal and lightweight blog and portfolio.",
+  DESCRIPTION:
+    "Danilo Velasquez - Staff Software Engineer and Platform Engineer. Insights on frontend development, web performance, CI/CD optimization, and systems architecture at scale.",
 };
 
 export const BLOG: Metadata = {

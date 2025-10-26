@@ -4,6 +4,7 @@ import type {
   FAQPage,
   Service,
   WithContext,
+  BreadcrumbList,
 } from "schema-dts";
 import { SITE, SOCIALS } from "@consts";
 import type { FAQItem } from "@data/faq";
@@ -109,7 +110,8 @@ export function createBlogPostingSchema(
   description: string,
   date: Date,
   url: URL,
-  baseUrl: URL
+  baseUrl: URL,
+  keywords?: string[]
 ): WithContext<BlogPosting> {
   const authorId = new URL("about", baseUrl).toString();
 
@@ -119,16 +121,27 @@ export function createBlogPostingSchema(
     headline: title,
     description: description,
     datePublished: date.toISOString(),
+    dateModified: date.toISOString(),
     author: {
+      "@type": "Person",
       "@id": authorId,
+      name: SITE.NAME,
+      email: SITE.EMAIL,
     },
     publisher: {
+      "@type": "Organization",
       "@id": authorId,
+      name: SITE.NAME,
+      logo: {
+        "@type": "ImageObject",
+        url: new URL("favicon-light.svg", baseUrl).toString(),
+      },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": url.toString(),
     },
+    keywords: keywords?.join(", "),
   };
 }
 
@@ -186,5 +199,20 @@ export function createConsultingServiceSchema(
       "Technical Leadership",
       "Engineering Mentoring",
     ],
+  };
+}
+
+export function createBreadcrumbSchema(
+  items: Array<{ name: string; url: string }>
+): WithContext<BreadcrumbList> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
   };
 }
