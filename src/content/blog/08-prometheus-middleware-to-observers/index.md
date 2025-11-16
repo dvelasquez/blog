@@ -2,7 +2,11 @@
 title: "I've Re-Written My Metrics Middleware for Every Node Framework. Maybe I Didn't Have To"
 description: "Learnings from instrumenting Prometheus in NodeJS applications and how it should be done in 2025+."
 date: "November 16, 2025"
+keywords:
+  ["prometheus", "nodejs", "middleware", "observers", "performance", "astro"]
 ---
+
+![Prometheus and NodeJS logos](/2025-11-16/nodejs-prometheus.png)
 
 For the last 9 years, I've helped build and scale a half-dozen different marketplaces. And in almost every one, I've had to solve the same problem: getting good, basic RED metrics (Rate, Errors, Duration) out of the application.
 
