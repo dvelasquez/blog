@@ -55,7 +55,7 @@ And in all those years of porting, I'd failed to notice that the platform itself
 
 It turns out, since Node.js 16 (and maybe even earlier, though the docs are fuzzy), we've had the `PerformanceObserver` API. This is the same family of APIs we use in the browser to measure paint times and resource loading, but it's available on the server, too.
 
-And it can listen to, among many other things, `'http'`.
+And it can listen to, among many other things, `http`.
 
 This `http` type fires for events from the native `http.server` module. When a request comes in and when a response is finished, it creates a `PerformanceEntry` with all the timing data.
 
@@ -140,7 +140,7 @@ It was a nightmare for code reviews. And it created three massive blind spots:
 2.  **What about `node_modules`?** What about that third-party SDK for analytics, or logging, or payments? They're making their own requests. We had zero visibility into them.
 3.  **What about malicious requests?** What if one of our dependencies has been compromised?
 
-This is where the _other_ entries from `PerformanceObserver` come in. Remember that `'resource'` type we saw earlier?
+This is where the _other_ entries from `PerformanceObserver` come in. Remember that `resource` type we saw earlier?
 
 It turns out, `resource` entries are created for _all native `http.request` and `https.request` calls_.
 
