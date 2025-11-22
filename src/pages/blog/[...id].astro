@@ -5,8 +5,8 @@ import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import { readingTime, extractFirstImageFromMarkdown } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
-import LetsConnect from "@components/LetsConnect.astro";
 import { createBlogPostingSchema, createBreadcrumbSchema } from "@lib/schemas";
+import HireMe from "@components/HireMe.astro";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog"))
@@ -82,6 +82,6 @@ const breadcrumbSchema = createBreadcrumbSchema([
     <article class="animate">
       <Content />
     </article>
-    <LetsConnect />
+    <HireMe cta={post.data.cta} ctaLink={post.data.ctaLink} />
   </Container>
 </PageLayout>

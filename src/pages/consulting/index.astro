@@ -1,6 +1,6 @@
 ---
 import Container from "@components/Container.astro";
-import { CONSULTING, SITE } from "@consts";
+import { CONSULTING } from "@consts";
 import PageLayout from "@layouts/PageLayout.astro";
 import { createConsultingServiceSchema } from "@lib/schemas";
 
@@ -88,6 +88,14 @@ const consultingSchema = createConsultingServiceSchema(Astro.site!);
               <li>
                 <strong>Best for:</strong> Teams held back by slow builds, flaky
                 tests, and a high Mean Lead Time for Changes (MLTC).
+              </li>
+              <li>
+                “Read the case study: <a
+                  href="/blog/06-taming-the-ci-beast-part-4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><strong>How I reduced CI times from 50m to 9m.” </strong></a
+                >
               </li>
             </ul>
           </div>
@@ -210,12 +218,14 @@ const consultingSchema = createConsultingServiceSchema(Astro.site!);
         <article class="space-y-4">
           <p class="animate">
             Ready to scale your team's platform and speed? Send me an email at <a
-              href={`mailto:${SITE.EMAIL}`}><strong>{SITE.EMAIL}</strong></a
+              href={`mailto:consulting@danilovelasquez.com?subject=Consulting%20Inquiry&body=Hi%20Danilo,%20I%20read%20your%20consulting%20page%20and%20would%20like%20to%20discuss...`}
+              ><strong>consulting@danilovelasquez.com</strong></a
             > with a brief description of your challenges.
           </p>
           <p class="animate">
-            We can then schedule a <strong
-              >free, 30-minute discovery call</strong
+            We can then schedule a <a
+              href="https://cal.com/danilovelasquez/30min"
+              target="_blank"><strong>free, 30-minute discovery call</strong></a
             > to see if we're a good fit.
           </p>
         </article>

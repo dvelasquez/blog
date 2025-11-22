@@ -4,6 +4,7 @@ description: "Learnings from instrumenting Prometheus in NodeJS applications and
 date: "November 16, 2025"
 keywords:
   ["prometheus", "nodejs", "middleware", "observers", "performance", "astro"]
+featured: true
 ---
 
 ![Prometheus and NodeJS logos](/2025-11-16/nodejs-prometheus.png)
@@ -221,6 +222,8 @@ This was a long post, but the takeaway is simple: **our platforms are always evo
 The patterns we learned five years ago, even two years ago, might be obsolete. That [express-prometheus-middleware](https://www.npmjs.com/package/express-prometheus-middleware) package was a brilliant, pragmatic solution for the platform we _had_. But the platform we _have_ is more powerful.
 
 Stop and take a look. The platform might have already solved your problem for you.
+
+Observability isn't just charts; it's how you detect revenue-impacting outages before your users do.
 
 ---
 

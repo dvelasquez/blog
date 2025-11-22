@@ -1,7 +1,9 @@
 ---
-title: "Taming the CI Beast: The Impact of Optimization (Part 4)"
+title: "How we saved €20k/year by optimizing CI pipelines (Taming the CI Beast Part 4)"
 description: "Quantifying the cost savings and developer productivity gains achieved by optimizing our CI/CD pipeline."
-date: "January 20, 2025" 
+date: "January 20, 2025"
+featured: true
+cta: "Is your team struggling with slow CI/CD pipelines? I help organizations replicate these exact results."
 ---
 
 ![Impact of Optimization](/2025-01-20/taming-the-ci-beast-intro.png)
@@ -15,7 +17,7 @@ But what was the real impact of these optimizations? How did they translate into
 As engineers, we're often faced with a multitude of potential projects and improvements. It's crucial to prioritize those that deliver clear and measurable value to the business. In the case of our CI/CD optimization efforts, the impact came from two main sources:
 
 1. **Reduced infrastructure costs:** By optimizing our pipeline, we decreased the resources required to run our CI/CD infrastructure on AWS.
-2. **Improved developer productivity:**  Shorter build times translated into less time wasted by developers waiting for builds to complete.
+2. **Improved developer productivity:** Shorter build times translated into less time wasted by developers waiting for builds to complete.
 
 ## Quantifying the Savings
 
@@ -23,15 +25,15 @@ Let's start by analyzing the cost savings on our AWS infrastructure. Based on th
 
 However, the more substantial impact came from the improvement in developer productivity. With **at least 180 pull requests per week** and a team of **100 frontend engineers**, the initial one-hour build time translated to a significant amount of wasted developer time.
 
-To put this into perspective, let's consider the annual cost of this wasted time.  With at least 180 PRs per week and a one-hour processing time, we were spending at least 180 hours per week on CI/CD, or 9360 hours annually (180 hours/week * 52 weeks/year).
+To put this into perspective, let's consider the annual cost of this wasted time. With at least 180 PRs per week and a one-hour processing time, we were spending at least 180 hours per week on CI/CD, or 9360 hours annually (180 hours/week \* 52 weeks/year).
 
 To calculate the monetary cost, we need to consider the weighted average hourly rate of a frontend engineer in Europe, where our team is primarily located. Based on data from various sources, the average yearly gross salary for a frontend developer in Germany is around €60,000, in France €60,481, and in Spain €54,636.
 
 Considering the proportion of developers from each country in our team (75% French, 15% German, 10% Spanish), we can calculate the weighted average hourly rate:
 
-(0.75 * €60,481/year + 0.15 * €60,000/year + 0.10 * €54,636/year) / (52 weeks/year * 40 hours/week) ≈ €30/hour
+(0.75 _ €60,481/year + 0.15 _ €60,000/year + 0.10 _ €54,636/year) / (52 weeks/year _ 40 hours/week) ≈ €30/hour
 
-Therefore, the initial annual cost of our CI/CD process was a staggering €280,800 (9360 hours * €30/hour).
+Therefore, the initial annual cost of our CI/CD process was a staggering €280,800 (9360 hours \* €30/hour).
 
 By reducing the CI/CD process time to nine minutes, we decreased the annual time spent to 1404 hours, resulting in a new annual cost of €42,120.
 
