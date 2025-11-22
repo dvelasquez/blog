@@ -1,0 +1,29 @@
+---
+interface Props {
+  cta?: string;
+  ctaLink?: {
+    href: string;
+    text: string;
+  };
+}
+const { cta, ctaLink } = Astro.props;
+---
+
+<hr />
+<section class="animate space-y-4">
+  <article class="space-y-2">
+    <p>
+      {
+        cta ||
+          "Is your team struggling delivering fast and reliable web applications? I help organizations replicate these exact results."
+      }
+      {
+        ctaLink ? (
+          <a href={ctaLink.href}>{ctaLink.text}</a>
+        ) : (
+          <a href="/consulting">Check out my Consulting Services.</a>
+        )
+      }
+    </p>
+  </article>
+</section>

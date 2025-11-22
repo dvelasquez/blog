@@ -10,6 +10,7 @@ import LetsConnect from "@components/LetsConnect.astro";
 
 const blog = (await getCollection("blog"))
   .filter(post => !post.data.draft)
+  .filter(post => post.data.featured)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
@@ -91,7 +92,9 @@ const work = await Promise.all(
 
       <section class="animate space-y-6">
         <div class="flex flex-wrap items-center justify-between gap-y-2">
-          <h5 class="font-semibold text-black dark:text-white">Latest posts</h5>
+          <h5 class="font-semibold text-black dark:text-white">
+            Featured posts
+          </h5>
           <Link href="/blog"> See all posts </Link>
         </div>
         <ul class="flex flex-col gap-4">
