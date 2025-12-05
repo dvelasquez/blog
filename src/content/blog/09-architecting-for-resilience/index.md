@@ -1,4 +1,10 @@
 ---
+title: "Architecting for Resilience: Stabilizing High-Traffic Node.js Workloads Under Attack (Part 1)"
+description: "A case stuffy in how I led the initiative to move from a 'brute force' scaling strategy to a resilient architecture"
+date: "December 5, 2025"
+keywords:
+  ["resilience", "DDoS", "performance", "astro"]
+featured: false
 ---
 # Architecting for Resilience: Stabilizing High-Traffic Node.js Workloads Under Attack (Part 1)
 
