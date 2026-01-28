@@ -20,7 +20,7 @@
     "@fontsource/lora": "5.2.8",
     "@tailwindcss/typography": "0.5.19",
     "@tailwindcss/vite": "4.1.18",
-    "astro": "5.16.15",
+    "astro": "5.16.16",
     "clsx": "2.1.1",
     "schema-dts": "1.1.5",
     "sharp": "0.34.5",
