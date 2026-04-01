@@ -22,7 +22,7 @@
     "@tailwindcss/vite": "4.2.2",
     "astro": "6.1.2",
     "clsx": "2.1.1",
-    "schema-dts": "1.1.5",
+    "schema-dts": "2.0.0",
     "sharp": "0.34.5",
     "tailwind-merge": "3.5.0",
     "tailwindcss": "4.2.2",
