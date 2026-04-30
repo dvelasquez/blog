@@ -30,7 +30,7 @@
   },
   "volta": {
     "node": "24.15.0",
-    "npm": "11.12.1"
+    "npm": "11.13.0"
   },
   "devDependencies": {
     "@eslint/js": "9.39.4",
