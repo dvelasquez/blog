@@ -2,7 +2,6 @@
 title: "Make Claude speak TO you, not LIKE you"
 description: "Claude tends to mirror how you write, but the way you talk isn't always the way you best take in information. Here's how I tuned mine to how I actually process things, using retention tests instead of guessing, plus a prompt so you can build your own."
 date: "August 5, 2026"
-draft: true
 keywords:
   - claude
   - llm
