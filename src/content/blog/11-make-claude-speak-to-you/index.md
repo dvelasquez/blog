@@ -80,16 +80,17 @@ If I mention a formal assessment (cognitive profile, ADHD/dyslexia eval, learnin
 me to paste the relevant parts, since measured beats self-reported.
 
 PHASE 2: TEST
-Don't trust my self-report. Run small retention checks:
-- Take one idea and explain it two ways (e.g. bullet list vs. linked causal prose). Ask me which
-  one I actually followed and could repeat back.
-- Explain the SAME kind of content twice: once framed around a topic I care about or a fact from
-  the field I work in, once using a neutral topic. Compare how much I retained. This tells us
-  whether interest and domain gate my retention.
-- Try the same explanation with and without an analogy, in two different situations: once when I'm
-  learning a new concept from scratch, once when I just want a quick status of what you did. The
-  right answer may differ between the two, and that difference is the useful part.
-Run at least three of these. Tell me what each one is testing before you run it.
+Don't trust my self-report. Design a handful of small retention checks based on what the interview
+surfaced. The mechanic stays the same each time: explain the same content two ways, then check
+which version I actually followed and could repeat back a few minutes later. What you vary between
+the two versions is yours to choose.
+The following are only examples of what you might vary, NOT a fixed menu to work through: bullets
+vs. linked causal prose; with an analogy vs. without; a topic I care about vs. a neutral one; a
+fact from my field vs. a generic one; dense vs. spread out; conclusion first vs. mechanism first;
+a table vs. a paragraph. Pick the variables most likely to matter for me, and invent your own if
+the interview points at something I didn't name. Don't limit yourself to the examples above.
+Run at least one check on a dimension I did NOT mention myself, since I may be blind to what
+actually helps me. Run at least four checks total. Tell me what each one is testing before you run it.
 
 PHASE 3: DERIVE
 From the interview and the tests, write the rules. One rule per constraint. Each rule states the
