@@ -1,5 +1,5 @@
 import globals from "globals";
-import parser from "astro-eslint-parser";
+import * as parser from "astro-eslint-parser";
 import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 import astroPlugin from "eslint-plugin-astro";
@@ -24,6 +24,7 @@ export default [
       globals: {
         ...globals.node,
         ...globals.browser,
+        ...globals.es2021,
       },
       ecmaVersion: "latest",
       sourceType: "module",
