@@ -41,6 +41,22 @@ That last rule is the thing the exercise taught me that I value most, and it onl
 
 None of these are aesthetic preferences. Each one earned its place by beating the alternative in a retention check.
 
+## The same explanation, two ways
+
+To make this concrete, here is one short technical explanation written twice. Same facts, a debounced search input. The first version is how an assistant explains it by default. The second applies my rules. Neither is wrong, and the first is perfectly competent. The second is just tuned to how I read.
+
+Default:
+
+> Debounce is a technique for limiting how often a function runs in response to a rapid stream of events. On a search input, the naive approach wires the request directly to the input's change event, so every keystroke fires its own request. Type "laptop" and you've sent six requests, "l", "la", "lap", and so on, most of which are already stale by the time they come back. That wastes bandwidth, hammers your backend, and can cause race conditions where an earlier response arrives after a later one and overwrites the correct results.
+
+Tuned to my rules:
+
+> Without **debounce**, every key the user presses in a search field fires its own request. Typing **"laptop"** sends six requests: **"l"**, **"la"**, **"lap"**, and so on. Most of those requests are already stale by the time they come back. Stale requests waste bandwidth, hammer the backend, and cause race conditions: an earlier response arrives after a later response and overwrites the correct results.
+>
+> **Debounce** is a technique that limits how often a function runs in response to a rapid stream of events. Instead of firing the request on each keystroke, **debounce** starts a timer set to a short delay, for example **300ms**. If another keystroke arrives before the timer expires, **debounce** cancels the timer and starts a fresh one. Only when the user stops typing for the full delay does the timer complete and a single request go out. The backend only sees the queries the user actually paused on, requests drop, load drops, and the race conditions from intermediate keystrokes disappear.
+
+The difference is not quality. The default version opens with the abstract definition and runs it as one long descriptive paragraph. My version opens with what breaks first, bolds the identifiers so a re-read is cheap, and moves in short cause-and-effect steps. For me, the second one stays in my head. For you, a different set of edits would.
+
 ## Build your own
 
 You do not need my file. You need your own, because your constraints are not mine. Claude can run the whole thing on you. Paste this into a fresh conversation and give it twenty to thirty minutes.
