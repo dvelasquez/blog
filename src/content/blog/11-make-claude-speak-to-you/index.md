@@ -57,6 +57,12 @@ Tuned to my rules:
 
 The difference is not quality. The default version opens with the abstract definition and runs it as one long descriptive paragraph. My version opens with what breaks first, bolds the identifiers so a re-read is cheap, and moves in short cause-and-effect steps. For me, the second one stays in my head. For you, a different set of edits would.
 
+## It's not about saving tokens
+
+One thing to be clear about before you run this. The goal is not to make Claude cheaper or its answers shorter. Token cost is not the point. The point is my own mental capacity. Every message I have to re-read, decode, or push through spends attention I wanted for the actual work. A protocol tuned to me lowers that cost. It cuts the review fatigue of going over the same answers again and again. The tool ends up working in my favour, instead of me working to parse the tool.
+
+That only pays off if you are honest while you build it. Honesty beats polish here by a wide margin. If a question bores you, say so. If you start reading a sentence and give up halfway, say that too. If you skimmed instead of reading, admit it. None of that is a failure to hide. All of it is the signal. During my own calibration I told Claude, about one sentence: "I started reading that and it made me feel stupid, so I stopped." That single line was worth more than any careful answer, because it marked the exact point where the writing lost me. You are not there to impress Claude. You are there to show it where you drop off.
+
 ## Build your own
 
 You do not need my file. You need your own, because your constraints are not mine. Claude can run the whole thing on you. Paste this into a fresh conversation and give it twenty to thirty minutes.
@@ -78,6 +84,9 @@ a game's lore, a field I follow on my own time), and what field I actually work 
 down, because Phase 2 uses them to check whether interest and domain change what I retain.
 If I mention a formal assessment (cognitive profile, ADHD/dyslexia eval, learning profile), ask
 me to paste the relevant parts, since measured beats self-reported.
+Before you start, tell me that honesty matters more than good answers here: if a question bores
+me, if I start a sentence and trail off, or if I skimmed instead of reading it, I should say so,
+because that is the signal you need most. I'm not here to impress you.
 
 PHASE 2: TEST
 Don't trust my self-report. Design a handful of small retention checks based on what the interview
@@ -108,7 +117,7 @@ Output a finished protocol file I can save as CLAUDE.md (or paste into custom in
 Start with Phase 1, first question only.
 ```
 
-Save the output as `CLAUDE.md` if you use Claude Code, or paste it into the custom-instructions field of whatever tool you use. It loads every session from then on.
+Save the output as `CLAUDE.md` if you use Claude Code, or paste it into the custom-instructions field of whatever tool you use. It loads every session from then on. This is not specific to Claude either. The same file helps other assistants and agents. In my experience the best results come in Claude Code, where far fewer system prompts compete with your instructions, so your rules carry more weight. The web version has more of that background noise, but the protocol still helps a lot there.
 
 ## Two things that make the test sharp
 
