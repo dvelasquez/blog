@@ -19,11 +19,11 @@ So I stopped guessing and ran some tests on myself.
 
 ## The mistake I was making
 
-If you had asked me how I like things explained, I would have said analogies help me get it. I believed that. I had believed it for years.
+If you had asked me whether analogies help me, I would have given you a flat answer. It would have been wrong, because the honest answer has a condition on it, and I had never separated the two cases.
 
-It turned out to be wrong. When I checked what I actually retained, analogies made things worse. They forced me to translate the idea twice, first from the analogy into the real thing, then into memory. The version with no analogy, just the mechanism described plainly, landed better every time.
+When I am learning a new concept and I ask for it to be explained, an analogy helps. It gives me a handle on something I have nothing to attach to yet. But when I am in the middle of work and Claude just tells me what it did, the same analogy is dead weight. I have to decode it for no reason, and it costs me the attention I wanted on the actual task.
 
-I only found that out because I tested it instead of trusting my own report. That is the point of this post. You are probably wrong about how you best process information, and it is the kind of wrong you can measure.
+So the rule is not "analogies, yes" or "analogies, no". It is "analogies when I'm learning, not when I'm working". I only found that condition because I tested the two situations separately instead of asking myself one flat question. That is the point of this post. You are probably wrong about how you best process information, and often the wrong is that you flattened a rule that needed a condition on it.
 
 ## What I built instead
 
@@ -70,7 +70,9 @@ Don't trust my self-report. Run small retention checks:
 - Explain the SAME kind of content twice: once framed around a topic I care about or a fact from
   the field I work in, once using a neutral topic. Compare how much I retained. This tells us
   whether interest and domain gate my retention.
-- Try one explanation WITH an analogy and one WITHOUT. See which lands.
+- Try the same explanation with and without an analogy, in two different situations: once when I'm
+  learning a new concept from scratch, once when I just want a quick status of what you did. The
+  right answer may differ between the two, and that difference is the useful part.
 Run at least three of these. Tell me what each one is testing before you run it.
 
 PHASE 3: DERIVE
