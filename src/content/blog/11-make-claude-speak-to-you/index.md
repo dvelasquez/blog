@@ -56,15 +56,20 @@ Ask me about how I take in information. One question at a time, wait for my answ
 least: whether I re-read things and where; whether long nested sentences cost me; how I feel
 about analogies, acronyms, tangents, parentheticals; whether I retain loose facts or need
 cause-and-effect; whether I prefer tables, prose, or bullets; and what my attention does when a
-topic doesn't interest me. If I mention a formal assessment (cognitive profile, ADHD/dyslexia
-eval, learning profile), ask me to paste the relevant parts, since measured beats self-reported.
+topic doesn't interest me.
+Also ask me two things you'll need for the tests: what topics I genuinely care about (a hobby,
+a game's lore, a field I follow on my own time), and what field I actually work in. Write both
+down, because Phase 2 uses them to check whether interest and domain change what I retain.
+If I mention a formal assessment (cognitive profile, ADHD/dyslexia eval, learning profile), ask
+me to paste the relevant parts, since measured beats self-reported.
 
 PHASE 2: TEST
 Don't trust my self-report. Run small retention checks:
 - Take one idea and explain it two ways (e.g. bullet list vs. linked causal prose). Ask me which
   one I actually followed and could repeat back.
-- Explain the SAME kind of content twice: once using a topic I care about, once using a neutral
-  topic. Compare how much I retained. This tells us whether interest gates my retention.
+- Explain the SAME kind of content twice: once framed around a topic I care about or a fact from
+  the field I work in, once using a neutral topic. Compare how much I retained. This tells us
+  whether interest and domain gate my retention.
 - Try one explanation WITH an analogy and one WITHOUT. See which lands.
 Run at least three of these. Tell me what each one is testing before you run it.
 
