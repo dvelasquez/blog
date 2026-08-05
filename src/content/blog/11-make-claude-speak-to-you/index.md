@@ -11,9 +11,9 @@ keywords:
   - prompting
 ---
 
-Talk to Claude for a while and you notice something. It starts to sound like you. Write formally and it answers formally. Crack a joke and it loosens up. That mirroring is usually a nice property. Language models pick up the register and style of the person in front of them.
+I once told Claude, about a sentence it had just written for me: "I started reading that and it made me feel stupid, so I stopped." That one line taught me more than any careful answer could have, because it marked the exact spot where the writing lost me.
 
-I missed one thing about it for a long time. The way I talk is not the way I best take in information. Those are two different systems, and the mirroring only serves the first one. When Claude explains something new to me in my own comfortable style, it optimises for how I sound, not for what stays in my head afterwards.
+It also pointed at something I had missed for a long time. Talk to Claude for a while and it starts to sound like you. Write formally and it answers formally. Crack a joke and it loosens up. Language models pick up the register and style of the person in front of them, and that mirroring is usually a nice property. But the way I talk is not the way I best take in information. Those are two different systems, and the mirroring only serves the first one. When Claude explains something new to me in my own comfortable style, it optimises for how I sound, not for what stays in my head.
 
 So I stopped guessing and ran some tests on myself.
 
@@ -61,7 +61,7 @@ The difference is not quality. The default version opens with the abstract defin
 
 One thing to be clear about before you run this. The goal is not to make Claude cheaper or its answers shorter. Token cost is not the point. The point is my own mental capacity. Every message I have to re-read, decode, or push through spends attention I wanted for the actual work. A protocol tuned to me lowers that cost. It cuts the review fatigue of going over the same answers again and again. The tool ends up working in my favour, instead of me working to parse the tool.
 
-That only pays off if you are honest while you build it. Honesty beats polish here by a wide margin. If a question bores you, say so. If you start reading a sentence and give up halfway, say that too. If you skimmed instead of reading, admit it. None of that is a failure to hide. All of it is the signal. During my own calibration I told Claude, about one sentence: "I started reading that and it made me feel stupid, so I stopped." That single line was worth more than any careful answer, because it marked the exact point where the writing lost me. You are not there to impress Claude. You are there to show it where you drop off.
+That only pays off if you are honest while you build it. Honesty beats polish here by a wide margin. If a question bores you, say so. If you start reading a sentence and give up halfway, say that too. If you skimmed instead of reading, admit it. None of that is a failure to hide. All of it is the signal. An honest "this bored me" or "I gave up on that sentence halfway" beats any careful answer, because it marks the exact point where the writing lost you. That is what the line I opened with did. You are not there to impress Claude. You are there to show it where you drop off.
 
 ## Build your own
 
@@ -119,15 +119,9 @@ Start with Phase 1, first question only.
 
 Save the output as `CLAUDE.md` if you use Claude Code, or paste it into the custom-instructions field of whatever tool you use. It loads every session from then on. This is not specific to Claude either. The same file helps other assistants and agents. In my experience the best results come in Claude Code, where far fewer system prompts compete with your instructions, so your rules carry more weight. The web version has more of that background noise, but the protocol still helps a lot there.
 
-## Two things that make the test sharp
+## What makes the test sharp
 
-The testing phase is only as good as the material you feed it. Two inputs matter most.
-
-Bring a topic you genuinely care about. When Claude runs the interest-versus-neutral test, do not give it a generic example. Give it a real passion, a hobby, a game's lore, a field you follow on your own time. The gap between how much you retain on that versus a neutral topic is often the single biggest finding of the whole exercise. For me it was decisive.
-
-Bring facts from the domain you actually work in. Have Claude test you with real material from your job, a piece of your stack, your field's jargon, a system you own. It makes the test realistic. And if a few people do this, it lets us compare. Does retention track interest and domain the same way for everyone, or is it personal? That comparison is where it gets interesting.
-
-If you have any formal assessment of how you learn or process, a cognitive profile, an ADHD or dyslexia evaluation, paste it in during Phase 1. Measured constraints beat self-reported ones every time.
+The test is only as good as the material you feed it. Give Claude a topic you genuinely care about, a real passion: a hobby, a game's lore, a field you follow on your own time. The gap between how much you retain on that versus a neutral topic is often the single biggest finding of the whole exercise. For me it was decisive. Then have it test you with real material from the field you work in, your stack, your jargon, a system you own, so the result matches how you actually read at work.
 
 ## Why bother
 
