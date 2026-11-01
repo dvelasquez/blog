@@ -23,22 +23,20 @@ const work = await Promise.all(
     <div class="space-y-10">
       <div class="animate font-semibold text-black dark:text-white">Work</div>
       <ul class="flex flex-col space-y-4">
-        {
-          work.map(entry => (
-            <li class="animate">
-              <div class="text-sm opacity-75">
-                {dateRange(entry.data.dateStart, entry.data.dateEnd)}
-              </div>
-              <div class="font-semibold text-black dark:text-white">
-                {entry.data.company}
-              </div>
-              <div class="text-sm opacity-75">{entry.data.role}</div>
-              <article>
-                <entry.Content />
-              </article>
-            </li>
-          ))
-        }
+        {work.map(entry => (
+          <li class="animate">
+            <div class="text-sm opacity-75">
+              {dateRange(entry.data.dateStart, entry.data.dateEnd)}
+            </div>
+            <div class="font-semibold text-black dark:text-white">
+              {entry.data.company}
+            </div>
+            <div class="text-sm opacity-75">{entry.data.role}</div>
+            <article>
+              <entry.Content />
+            </article>
+          </li>
+        ))}
       </ul>
       <!-- 
       <ul class="animate flex flex-col gap-4">
