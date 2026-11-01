@@ -13,7 +13,6 @@ const consultingSchema = createConsultingServiceSchema(Astro.site!);
     type="application/ld+json"
     set:html={JSON.stringify(consultingSchema)}
   />
-
   <Container>
     <h1 class="animate text-xl font-semibold text-black dark:text-white">
       Staff-Level Engineering Consulting & Mentoring
@@ -30,19 +29,26 @@ const consultingSchema = createConsultingServiceSchema(Astro.site!);
           <p class="animate">
             I help engineering organizations scale their platforms, people, and
             processes. As a Staff Engineer who has scaled systems for hundreds
-            of developers at <a
+            of developers at{" "}
+            <a
               href="https://www.leboncoin.fr"
               target="_blank"
-              rel="noopener noreferrer"><strong>leboncoin.fr</strong></a
-            > and <a
+              rel="noopener noreferrer"
+            >
+              <strong>leboncoin.fr</strong>
+            </a>{" "}
+            and{" "}
+            <a
               href="https://www.kleinanzeigen.de"
               target="_blank"
-              rel="noopener noreferrer"><strong>Kleinanzeigen</strong></a
-            >, I solve the complex bottlenecks in <strong
-              >platform engineering</strong
-            >, <strong>developer experience (DevEx)</strong>, and <strong
-              >systems architecture</strong
-            >.
+              rel="noopener noreferrer"
+            >
+              <strong>Kleinanzeigen</strong>
+            </a>
+            , I solve the complex bottlenecks in{" "}
+            <strong>platform engineering</strong>,{" "}
+            <strong>developer experience (DevEx)</strong>, and{" "}
+            <strong>systems architecture</strong>.
           </p>
         </article>
       </section>
@@ -57,27 +63,31 @@ const consultingSchema = createConsultingServiceSchema(Astro.site!);
             </h3>
             <ul class="animate space-y-2">
               <li>
-                <strong>What it is:</strong> A top-to-bottom audit and rebuild of
-                your development and deployment pipeline. We find what's "slow" and
-                make it fast.
+                <strong>What it is:</strong> A top-to-bottom audit and rebuild
+                of your development and deployment pipeline. We find what's
+                "slow" and make it fast.
               </li>
               <li>
-                <strong>What you deliver:</strong> A pragmatic, actionable roadmap
-                to fix your CI/CD, testing, and infrastructure bottlenecks. I'll apply
-                the same principles I used at <a
+                <strong>What you deliver:</strong> A pragmatic, actionable
+                roadmap to fix your CI/CD, testing, and infrastructure
+                bottlenecks. I'll apply the same principles I used at{" "}
+                <a
                   href="https://www.leboncoin.fr"
                   target="_blank"
-                  rel="noopener noreferrer"><strong>leboncoin.fr</strong></a
-                > to:
+                  rel="noopener noreferrer"
+                >
+                  <strong>leboncoin.fr</strong>
+                </a>{" "}
+                to:
                 <ul class="animate mt-2 ml-4 space-y-1">
                   <li>
-                    <strong>Migrate your entire CI/CD</strong> from legacy systems
-                    (like Travis) to modern platforms (like GitHub Actions).
+                    <strong>Migrate your entire CI/CD</strong> from legacy
+                    systems (like Travis) to modern platforms (like GitHub
+                    Actions).
                   </li>
                   <li>
-                    <strong>Crush CI times</strong> from 1-2 hours down to <strong
-                      >under 10 minutes</strong
-                    >.
+                    <strong>Crush CI times</strong> from 1-2 hours down to{" "}
+                    <strong>under 10 minutes</strong>.
                   </li>
                   <li>
                     <strong>Optimize infrastructure</strong>, in one case
@@ -86,16 +96,18 @@ const consultingSchema = createConsultingServiceSchema(Astro.site!);
                 </ul>
               </li>
               <li>
-                <strong>Best for:</strong> Teams held back by slow builds, flaky tests,
-                and a high Mean Lead Time for Changes (MLTC).
+                <strong>Best for:</strong> Teams held back by slow builds, flaky
+                tests, and a high Mean Lead Time for Changes (MLTC).
               </li>
               <li>
-                “Read the case study: <a
+                “Read the case study:{" "}
+                <a
                   href="/blog/06-taming-the-ci-beast-part-4"
                   target="_blank"
                   rel="noopener noreferrer"
-                  ><strong>How I reduced CI times from 50m to 9m.” </strong></a
                 >
+                  <strong>How I reduced CI times from 50m to 9m.” </strong>
+                </a>
               </li>
             </ul>
           </div>
@@ -106,27 +118,31 @@ const consultingSchema = createConsultingServiceSchema(Astro.site!);
             </h3>
             <ul class="animate space-y-2">
               <li>
-                <strong>What it is:</strong> A strategic plan to scale your architecture
-                and your engineering organization together.
+                <strong>What it is:</strong> A strategic plan to scale your
+                architecture and your engineering organization together.
               </li>
               <li>
-                <strong>What you deliver:</strong> A clear path forward, whether it's
-                designing a <strong>scalable monorepo</strong> or <strong
-                  >migrating a legacy monolith</strong
-                >. I'm currently leading this at <a
+                <strong>What you deliver:</strong> A clear path forward, whether
+                it's designing a <strong>scalable monorepo</strong> or{" "}
+                <strong>migrating a legacy monolith</strong>. I'm currently
+                leading this at{" "}
+                <a
                   href="https://www.kleinanzeigen.de"
                   target="_blank"
-                  rel="noopener noreferrer"><strong>Kleinanzeigen</strong></a
-                >, migrating a jQuery/Java SpringBoot system to a <strong
-                  >Node.js, Astro, and React</strong
-                > stack, resulting in a <strong
-                  >5x improvement in development speed</strong
-                > for the teams involved.
+                  rel="noopener noreferrer"
+                >
+                  <strong>Kleinanzeigen</strong>
+                </a>
+                , migrating a jQuery/Java SpringBoot system to a{" "}
+                <strong>Node.js, Astro, and React</strong> stack, resulting in a{" "}
+                <strong>5x improvement in development speed</strong> for the
+                teams involved.
               </li>
               <li>
-                <strong>Best for:</strong> Organizations struggling with a monolith,
-                scaling to 100+ engineers, or needing to design a high-performing
-                monorepo for shared packages and micro-frontends.
+                <strong>Best for:</strong> Organizations struggling with a
+                monolith, scaling to 100+ engineers, or needing to design a
+                high-performing monorepo for shared packages and
+                micro-frontends.
               </li>
             </ul>
           </div>
@@ -137,27 +153,29 @@ const consultingSchema = createConsultingServiceSchema(Astro.site!);
             </h3>
             <ul class="animate space-y-2">
               <li>
-                <strong>What it is:</strong> A 1-on-1 mentorship program for engineers
-                and leaders. This program has two tracks:
+                <strong>What it is:</strong> A 1-on-1 mentorship program for
+                engineers and leaders. This program has two tracks:
                 <ol class="animate mt-2 ml-4 space-y-1">
                   <li>
-                    <strong>Technical Leadership:</strong> A structured growth plan
-                    for Senior engineers on the path to Staff/Principal. We focus
-                    on technical strategy, architectural vision, and cross-team influence.
+                    <strong>Technical Leadership:</strong> A structured growth
+                    plan for Senior engineers on the path to Staff/Principal. We
+                    focus on technical strategy, architectural vision, and
+                    cross-team influence.
                   </li>
                   <li>
-                    <strong>Navigating the Workplace:</strong> Dedicated, empathetic
-                    coaching for <strong
-                      >neurodivergent (ND) professionals</strong
-                    >. If you are struggling with your work environment and
-                    would like the perspective of someone who has navigated it,
-                    I am here to help.
+                    <strong>Navigating the Workplace:</strong> Dedicated,
+                    empathetic coaching for{" "}
+                    <strong>neurodivergent (ND) professionals</strong>. If you
+                    are struggling with your work environment and would like the
+                    perspective of someone who has navigated it, I am here to
+                    help.
                   </li>
                 </ol>
               </li>
               <li>
-                <strong>Best for:</strong> Ambitious engineers, new Staff-level leaders,
-                and any neurodivergent professional in tech seeking confidential guidance.
+                <strong>Best for:</strong> Ambitious engineers, new Staff-level
+                leaders, and any neurodivergent professional in tech seeking
+                confidential guidance.
               </li>
             </ul>
           </div>
@@ -169,20 +187,21 @@ const consultingSchema = createConsultingServiceSchema(Astro.site!);
         <p class="animate">I provide the most value to...</p>
         <ul class="animate space-y-2">
           <li>
-            <strong>CTOs or VPs of Engineering</strong> at scaling companies whose
-            teams are "feeling slow" and blocked by their platform.
+            <strong>CTOs or VPs of Engineering</strong> at scaling companies
+            whose teams are "feeling slow" and blocked by their platform.
           </li>
           <li>
-            <strong>Engineering Managers or Directors</strong> who need a concrete
-            plan for a complex, large-scale migration (e.g., monolith to micro-frontends).
+            <strong>Engineering Managers or Directors</strong> who need a
+            concrete plan for a complex, large-scale migration (e.g., monolith
+            to micro-frontends).
           </li>
           <li>
-            <strong>Senior Engineers</strong> on the path to Staff who need a mentor
-            to guide them.
+            <strong>Senior Engineers</strong> on the path to Staff who need a
+            mentor to guide them.
           </li>
           <li>
-            <strong>Neurodivergent Professionals</strong> in tech who would like coaching
-            from someone with shared experience.
+            <strong>Neurodivergent Professionals</strong> in tech who would like
+            coaching from someone with shared experience.
           </li>
         </ul>
       </section>
@@ -193,9 +212,8 @@ const consultingSchema = createConsultingServiceSchema(Astro.site!);
         </h2>
         <article class="space-y-4">
           <p class="animate">
-            My approach is built on one core idea: <strong
-              >"Change is Requirement #0."</strong
-            >
+            My approach is built on one core idea:{" "}
+            <strong>"Change is Requirement #0."</strong>
           </p>
           <p class="animate">
             I don't believe in "best practices" that don't fit your context. As
@@ -203,11 +221,11 @@ const consultingSchema = createConsultingServiceSchema(Astro.site!);
             prose and architecture as a story.
           </p>
           <p class="animate">
-            My job isn't to force my opinions. It's to act as a <strong
-              >teacher and a problem-solver</strong
-            >. I'll become a historian of your system, understand <em>why</em> it
-            was built, and give your team the context, real-world experience, and
-            confidence to make the best decision for your specific case.
+            My job isn't to force my opinions. It's to act as a{" "}
+            <strong>teacher and a problem-solver</strong>. I'll become a
+            historian of your system, understand <em>why</em> it was built, and
+            give your team the context, real-world experience, and confidence to
+            make the best decision for your specific case.
           </p>
         </article>
       </section>
@@ -216,16 +234,20 @@ const consultingSchema = createConsultingServiceSchema(Astro.site!);
         <h2 class="animate text-lg font-semibold">Let's Talk</h2>
         <article class="space-y-4">
           <p class="animate">
-            Ready to scale your team's platform and speed? Send me an email at <a
+            Ready to scale your team's platform and speed? Send me an email at{" "}
+            <a
               href={`mailto:consulting@danilovelasquez.com?subject=Consulting%20Inquiry&body=Hi%20Danilo,%20I%20read%20your%20consulting%20page%20and%20would%20like%20to%20discuss...`}
-              ><strong>consulting@danilovelasquez.com</strong></a
-            > with a brief description of your challenges.
+            >
+              <strong>consulting@danilovelasquez.com</strong>
+            </a>{" "}
+            with a brief description of your challenges.
           </p>
           <p class="animate">
-            We can then schedule a <a
-              href="https://cal.com/danilovelasquez/30min"
-              target="_blank"><strong>free, 30-minute discovery call</strong></a
-            > to see if we're a good fit.
+            We can then schedule a{" "}
+            <a href="https://cal.com/danilovelasquez/30min" target="_blank">
+              <strong>free, 30-minute discovery call</strong>
+            </a>{" "}
+            to see if we're a good fit.
           </p>
         </article>
       </section>
