@@ -24,7 +24,7 @@
     "clsx": "2.1.1",
     "schema-dts": "2.1.0",
     "sharp": "0.35.5",
-    "tailwind-merge": "3.7.0",
+    "tailwind-merge": "3.7.1",
     "tailwindcss": "4.3.5",
     "typescript": "6.0.3"
   },
